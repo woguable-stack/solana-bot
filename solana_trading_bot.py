@@ -42,8 +42,8 @@ import base58
 
 # ──────────────────────────────────────────────
 
-BOT_TOKEN = “8268631530:AAFAOsozKT5_TjxEiB-EYYN_Eo2Of2JkfsI”         # From @BotFather
-WALLET_PRIVATE_KEY = “4rz8F4zcGEyBoadxJX33bP2SKYuEuB6L8SqeFQaQ7xTBimbBzFtrHPsyNCeQBxJC91t5S96j3CAnKQp7s4ounzyk”  # Base58 private key
+BOT_TOKEN = "8268631530:AAFAOsozKT5_TjxEiB-EYYN_Eo2Of2JkfsI"         # From @BotFather
+WALLET_PRIVATE_KEY = "4rz8F4zcGEyBoadxJX33bP2SKYuEuB6L8SqeFQaQ7xTBimbBzFtrHPsyNCeQBxJC91t5S96j3CAnKQp7s4ounzyk"  # Base58 private key
 AUTHORIZED_USER_ID = 7428453450                        # Your Telegram user ID (get via @userinfobot)
 
 RPC_URL = “https://api.mainnet-beta.solana.com”
