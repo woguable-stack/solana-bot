@@ -42,15 +42,15 @@ import base58
 
 # ──────────────────────────────────────────────
 
-BOT_TOKEN = "8268631530:AAFAOsozKT5_TjxEiB-EYYN_Eo2Of2JkfsI"         # From @BotFather
-WALLET_PRIVATE_KEY = "4rz8F4zcGEyBoadxJX33bP2SKYuEuB6L8SqeFQaQ7xTBimbBzFtrHPsyNCeQBxJC91t5S96j3CAnKQp7s4ounzyk"  # Base58 private key
-AUTHORIZED_USER_ID = 7428453450                        # Your Telegram user ID (get via @userinfobot)
+BOT_TOKEN = ‘8268631530:AAFAOsozKT5_TjxEiB-EYYN_Eo2Of2JkfsI’         # From @BotFather
+WALLET_PRIVATE_KEY = ‘4rz8F4zcGEyBoadxJX33bP2SKYuEuB6L8SqeFQaQ7xTBimbBzFtrHPsyNCeQBxJC91t5S96j3CAnKQp7s4ounzyk’  # Base58 private key
+AUTHORIZED_USER_ID = 7428453450                          # Your Telegram user ID (get via @userinfobot)
 
-RPC_URL = “https://api.mainnet-beta.solana.com”
-JUPITER_QUOTE_URL = “https://quote-api.jup.ag/v6/quote”
-JUPITER_SWAP_URL  = “https://quote-api.jup.ag/v6/swap”
-DEXSCREENER_URL   = “https://api.dexscreener.com/latest/dex/tokens”
-SOL_MINT          = “So11111111111111111111111111111111111111112”
+RPC_URL = ‘https://api.mainnet-beta.solana.com’
+JUPITER_QUOTE_URL = ‘https://quote-api.jup.ag/v6/quote’
+JUPITER_SWAP_URL  = ‘https://quote-api.jup.ag/v6/swap’
+DEXSCREENER_URL   = ‘https://api.dexscreener.com/latest/dex/tokens’
+SOL_MINT          = ‘So11111111111111111111111111111111111111112’
 SLIPPAGE_BPS      = 300   # 3% slippage
 
 logging.basicConfig(
@@ -94,7 +94,7 @@ pairs = data.get(“pairs”)
 if not pairs:
 return None
 # Return the highest liquidity Solana pair
-sol_pairs = [p for p in pairs if p.get(“chainId”) == “solana”]
+sol_pairs = [p for p in pairs if p.get(‘chainId’) == ‘solana’]
 if not sol_pairs:
 return None
 return sorted(sol_pairs, key=lambda x: x.get(“liquidity”, {}).get(“usd”, 0), reverse=True)[0]
@@ -202,8 +202,8 @@ change_1h = data.get("priceChange", {}).get("h1", 0)
 change_24h = data.get("priceChange", {}).get("h24", 0)
 dex_url  = data.get("url", "")
 
-emoji_1h  = "🟢" if float(change_1h or 0) >= 0 else "🔴"
-emoji_24h = "🟢" if float(change_24h or 0) >= 0 else "🔴"
+emoji_1h  = '🟢' if float(change_1h or 0) >= 0 else '🔴'
+emoji_24h = '🟢' if float(change_24h or 0) >= 0 else '🔴'
 
 text = (
     f"💰 *{symbol}* ({name})\n\n"
@@ -377,7 +377,7 @@ for ca, h in portfolio.items():
 
     avg_buy = h.get("avg_buy", 0)
     pnl_pct = ((current_price - avg_buy) / avg_buy * 100) if avg_buy > 0 else 0
-    emoji   = "🟢" if pnl_pct >= 0 else "🔴"
+    emoji   = '🟢' if pnl_pct >= 0 else '🔴'
     total_pnl += pnl_pct
 
     lines.append(
@@ -580,5 +580,5 @@ print("🤖 Bot running...")
 app.run_polling()
 ```
 
-if **name** == “**main**”:
+if **name** == ‘**main**’:
 main()
